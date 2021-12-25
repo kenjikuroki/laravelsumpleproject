@@ -10,39 +10,31 @@
 @include('layouts.header')
  
 @section('content')
-<div class="header"></div>
-  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-  <label for="openSidebarMenu" class="sidebarIconToggle">
-    <div class="spinner diagonal part-1"></div>
-    <div class="spinner horizontal"></div>
-    <div class="spinner diagonal part-2"></div>
-  </label>
-  <div id="sidebarMenu">
-    <ul class="sidebarMenuInner">
-      <li>Jelena Jovanovic <span>Web Developer</span></li>
-      <li><a href="https://vanila.io" target="_blank">Company</a></li>
-      <li><a href="https://instagram.com/plavookac" target="_blank">Instagram</a></li>
-      <li><a href="https://twitter.com/plavookac" target="_blank">Twitter</a></li>
-      <li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">YouTube</a></li>
-      <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Linkedin</a></li>
-    </ul>
-  </div>
-  <div id='center' class="main center">
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
-    </div>
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
-    </div>
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+<div class="container">
+  <div class="row justify-content-center align-items-center main-row">
+    <div class="col shadow main-col bg-white">
+      <div class="row bg-primary text-white">
+        <div class="col  p-2">
+          <h4>Todo App</h4>
+        </div>
+      </div>
+      <div class="row justify-content-between text-white p-2">
+        <div class="form-group flex-fill mb-2">
+          <input id="todo-input" type="text" class="form-control" value="">
+        </div>
+        <button type="button" onclick="CreateTodo();" class="btn btn-primary mb-2 ml-2">Add todo</button>
+      </div>
+      <div class="row" id="todo-container">
+      </div>
     </div>
   </div>
+  <script src="{{ asset('js/mainContainer.js') }}"></script>
+</div>
 @endsection
  
  
 @include('layouts.footer')
 
 @section('script')
-<script src="{{ mix('js/sample.js') }}"></script>
+
 @endsection

@@ -16,22 +16,6 @@
       <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Linkedin</a></li>
     </ul>
   </div>
-  <div id='center' class="main center">
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
-    </div>
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
-    </div>
-    <div class="mainInner">
-      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
-    </div>
-  </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-</header>
+</div>
+        
 @endsection
