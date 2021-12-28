@@ -10,26 +10,59 @@
 @include('layouts.header')
  
 @section('content')
-<div class="container">
-  <div class="row justify-content-center align-items-center main-row">
-    <div class="col shadow main-col bg-white">
-      <div class="row bg-primary text-white">
-        <div class="col  p-2">
-          <h4>Todo App</h4>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <div class="card">
+            <div class="card-header">
+              <span class="mb-2">TODOLIST</span>
+            </div>
+            <div class="card-body">
+              <div id="main-demo-area" class="form-group">
+                <div class="unit input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">TEST</span>
+                  </div>
+                  <input name="test[]" type="text">
+                  <div class="demo-minus input-group-append">
+                    <span class="btn btn-danger">-</span>
+                  </div>
+                </div>
+              </div>
+              <div id="main-demo-plus" class="btn btn-primary">+</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-between text-white p-2">
-        <div class="form-group flex-fill mb-2">
-          <input id="todo-input" type="text" class="form-control" value="">
-        </div>
-        <button type="button" onclick="CreateTodo();" class="btn btn-primary mb-2 ml-2">Add todo</button>
-      </div>
-      <div class="row" id="todo-container">
       </div>
     </div>
-  </div>
-  <script src="{{ asset('js/mainContainer.js') }}"></script>
-</div>
+
+    <script type="text/javascript">
+      var minCount = 1;
+      var maxCount = 6;
+      $(function() {
+        $('#main-demo-plus').on('click', function() {
+          var inputCount = $('#main-demo-area .unit').length;
+          if (inputCount < maxCount) {
+            var element = $('#main-demo-area .unit:last-child').clone(true);
+            var inputList = element[0].querySelectorAll('input[type="text"]');
+            for (var i = 0; i < inputList.length; i++) {
+              inputList[i].value = "";
+            }
+            $('#main-demo-area .unit').parent().append(element);
+          }
+        });
+        $('.demo-minus').on('click', function() {
+          var inputCount = $('#main-demo-area .unit').length;
+          if (inputCount > minCount) {
+            $(this).parents('.unit').remove();
+          }
+        });
+      });
+    </script>
+  </body>
 @endsection
  
  
