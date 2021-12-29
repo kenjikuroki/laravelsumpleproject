@@ -14,14 +14,11 @@
         <div class="col-md-12 mt-5">
           <div class="card">
             <div class="card-header">
-              <span class="mb-2">jQueryフォーム追加削除</span>
+              <span class="mb-2">test</span>
             </div>
             <div class="card-body">
               <div id="demo-area" class="form-group">
                 <div class="unit input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">TEST</span>
-                  </div>
                   <input name="test[]" type="text">
                   <div class="demo-minus input-group-append">
                     <span class="btn btn-danger">-</span>
