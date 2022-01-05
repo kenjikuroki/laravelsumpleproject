@@ -5,82 +5,102 @@
 @section('description', 'インデックスページの説明文です')
 @section('pageCss')
 <link href="/css/index.css" rel="stylesheet">
+
 @endsection
 
 @include('layouts.header')
 
 @section('content')
 
+<!DOCTYPE html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Simple Sidebar - Start Bootstrap Template</title>
-  <!-- aZFavicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/sidebar.css" rel="stylesheet" />
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+
+    <!-- Bootstrap Javascript(jQuery含む) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="sidebar.js"></script>
+  </head>
 
 <body>
-  <div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <div class="border-end bg-white" id="sidebar-wrapper">
-      <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
-      <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-      </div>
-    </div>
-    <!-- Page content wrapper-->
-    <div id="page-content-wrapper">
-      <!-- Top navigation-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container-fluid">
-          <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-              <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#!">Action</a>
-                  <a class="dropdown-item" href="#!">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#!">Something else here</a>
-                </div>
-              </li>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
             </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Page content-->
-      <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>
-          Make sure to keep all page content within the
-          <code>#page-content-wrapper</code>
-          . The top navbar is optional, and just for demonstration. Just create an element with the
-          <code>#sidebarToggle</code>
-          ID which will toggle the menu when clicked.
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
-  
-  <script src=/js/sidebar.js></script>
+
+           
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            
+            <div class="line"></div>
+
+   
 </body>
+</html>
 @endsectiond
 
 

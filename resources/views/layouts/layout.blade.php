@@ -11,6 +11,7 @@
     </head>
     <body>
     @yield('header') 
+    @yield('sidebar')
     <div class="contents">
             @yield('content')
     </div>
